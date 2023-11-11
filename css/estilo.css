@@ -1,0 +1,308 @@
+* {
+	margin: 0; /*zerando a formatação padrão*/
+	padding: 0; /*zerando a formatação padrão*/
+}
+
+body {
+	font-family: "Trebuchet MS", Helvetica, sans-serif; /*definindo uma fonte padrão*/
+	background: #fff url(../imagens/fundo.png) repeat-x; /*definindo background cor branca e com imagem*/
+}
+
+#container {
+	width: 750px; /*definindo largura do container onde ficará logo e menu*/
+	margin: 0 auto;	/*centralizando logo e menu*/
+}
+
+#topo {
+	height: 150px;  /*definindo altura onde ficará logo e menu*/
+	background: url(../imagens/detalhe-topo.png) no-repeat right top;
+	margin-top: 25px;
+}
+
+.logo {
+	width: 152px; /*definindo largura igual a lago png*/
+	height: 66px; /*definindo altura igual a lago png*/
+	background: url(../imagens/logo.png) no-repeat center;
+	text-indent: -3000px; /*removendo de cima da logo o nome noticias da cidade, caso o css na carregue*/
+}
+
+/* Barra de navegação */
+
+a:link, a:visited {
+	color: #b10333;
+	padding: 2px;
+}
+
+a:hover {
+	color: #e550040;
+}
+
+ 
+ul {
+	margin: 0; /*removendo configuração padrão*/
+	padding: 0; /*removendo configuração padrão*/
+	list-style: none; /*removendo ponto que vem antes da lista da ul*/
+}
+
+#topo ul {
+	margin-top: 30px;
+	background: #b10333;
+	float: left; /*colocando a lista da vertical na horizontal*/
+}
+
+#topo ul li {
+	float: left; /*colocando a lista da vertical na horizontal*/
+}
+
+#topo ul a {
+	font-size: 0.9em; /*definindo tamanho da fonte*/
+	display: block; /*colocando o menu em block, pois ele fica todo junto*/
+	padding: 0.5em 1.5em;  /*colocando espaço no menu*/
+	line-height: 2.5em; /*colocando espaço no menu*/
+	text-decoration: none; /*retirando underline dos links*/
+	color: #fff; /*definido cor da fonte menu*/
+	background: url(../imagens/divisor.png) no-repeat left center; /*colocando barra ou divisor entre os menu*/
+	
+}
+
+#topo ul .primeiro a {
+	background: none; /*removendo o divisor do inicio da barra lado esquerdo*/
+}
+
+#topo ul a:hover {
+	color: #69001d; /*aplicando cor no menu quando passar mouse*/
+}
+
+/*marcando o menu home*/
+
+body.home #navegacao a#home, /*marcando página home*/
+body.brasil #navegacao a#brasil, /*marcando página brasil*/
+body.internacional #navegacao a#internacional, /*marcando página internacional*/
+body.economia #navegacao a#economia, /*marcando página economia*/
+body.saude #navegacao a#saude,  /*marcando página saude*/
+body.ciencia #navegacao a#ciencia, /*marcando página ciencia*/
+body.fotos #navegacao a#fotos /*marcando página fotos*/
+ {
+	color: #fff; /*cor branca da fonte marcada*/
+	background: #de003e; /*cor para quando ficar marcado*/
+	cursor: text; /*alterando cursor*/
+}
+
+/*CONFIGURAR LAYOUT DE TRÊS COLUNAS*/
+
+#conteudo {
+	background: #f5f5f5; /*cor branca da fonte marcada*/
+	margin-top: 60px; /*baixando area de conteúdo*/
+}
+
+/*Temos 750px de largura do container -> COLUNA PRIMÁRIA = 270px -> COLUNA SECUNDÁRIA = 270px */
+/*->COLUNA LATERAL = 180px -> ESPAÇAMENTO ENTRE COLUNAS = 15px + 15px pois teremos 2*/
+
+#lateral {
+	width: 180px; /*largura da coluna*/
+	float: left; /*para coluna flutuar à esquerda*/
+	margin: 0 0 20px -750px; /*0px superior, 0 lateral direita, 20px inferior, -750px lateral esquerda*/
+	/*como sabemos que nosso container tem 750px então precisa deslocar esse valor para esquerda*/
+	/*mas ainda precisamos ir no nosso secundário e colocar margem para ele*/
+	/*background: yellow; para diferencia coluna no inicio para marcar a caixa*/
+}
+
+/*TEMOS 2 id pois teremos paginas com 1 2 e 3 colunas*/
+
+
+
+#primario {
+	width: 270px; /*o primário por padrão teria 270px*/
+	float: left; /*para coluna flutuar à esquerda*/
+	margin: 0 0 20px 195px; /*0px superior, 0 lateral direita, 20px inferior, 195px lateral esquerda*/
+	/*precisamos deslocar primaria 180px + 15px para direita para caber a coluna lateral*/
+	/*background: blue; para diferencia coluna*/
+}
+
+#duas-colunas #primario {
+	width: 555px; /*largura da coluna como é duas 270 x 2 + 15 espaçamento*/
+}
+
+#uma-coluna #primario {
+	width: 750px; /*largura da coluna total do container*/
+	margin: 0 0 20px 0px; /*0px superior, 0 lateral direita, 20px inferior, 0px lateral esquerda*/
+	/*aqui não precisamos mais deslocar a coluna*/	
+}
+
+
+#secundario {
+	width: 270px; /*largura da coluna*/
+	float: left; /*para coluna flutuar à esquerda*/
+	margin: 0 0 20px 15px; /*0px superior, 0 lateral direita, 20px inferior, 15px lateral esquerda*/
+	/*background: green; para diferencia coluna*/
+}
+
+
+/*Caixa de conteudo*/
+
+.caixa {
+	margin: 10px 0;  /*10px inferior e superior e 0px lateral esq e dir*/
+	padding: 5px; /*5px em todos*/
+	background: #f3f3f3 url(../imagens/fundo-caixa.png); /*fundo com imagens e hexadecimal*/
+}
+
+h2 {
+	font-size: 1em; /*tamanho da fonte*/
+	background: #294c71; /*fundo para h2*/
+	color: #fff; /*cor da fonte*/
+	padding: 5px;
+}
+
+.caixa-conteudo {
+	background: #fff; /*cor de fundo branca*/
+	padding: 5px; /*5px em todos*/
+	margin-top: 5px; /*5px de margem superior*/
+}
+
+/*Formatar menus laterais*/
+
+#lateral ul a {
+	font-size: 0.9em; /*tamanho da fonte*/
+	padding: 3px; /*altura link*/
+	display: block; /*colocando o menu em block, pois ele fica todo junto*/
+	line-height: 30px; /*altura da linha*/
+	color: #000; /*cor do link*/
+	text-decoration: none;  /*tirando uderline do link*/
+	border-bottom: 1px solid red #f3f3f3; /*colocando borda parte inferior*/
+	}
+
+#lateral ul a:hover {
+	background: #f9f9f9 url(../imagens/marcador.png) no-repeat left center; 
+	/*quando colocamos mouse veja que a seta ficou em cima do nome*/
+	padding-left: 20px; /*alinhar a partir da esquerda em 20px e veja que nome sai de cima da seta*/
+	color: #a1a1a1; /*mudando a cor da fonte quando colocar mouse em cima*/
+}
+
+
+/*Formatar Formulário Newllester*/
+
+label {
+	display: block; /*para ficar um em cima do outro*/
+	cursor: pointer; /*quando colocar mouse sobre email vira uma mãozinha*/
+}
+
+input {
+	padding: 5px; /*espaçamento de 5*/
+	width: 125px; /*largura de 125*/
+	font-size: 0.9em; /*tamanho da fonte*/
+	background-color: #fff; /*cor branca de fundo*/
+	margin-top: 2px; /*margem superior*/
+	
+}
+
+input.submit {
+	width: 80px; /*largura botão*/
+	color: #fff; /*cor da fonte*/
+	background-color: #b10333; /*cor do botão*/
+	border: 2px solid #870529; /*cor da borda*/
+}
+
+.submit {
+	margin-top: 5px; /*espaçamento de 5*/
+}
+
+
+/*Formantando imagens*/
+
+/*Colocando formatação padrão para imagem*/
+
+/* Apagada do css pois não prica mais dela depois da borda diferente que foi inseriada abaixo
+img {
+	border: 2px solid #dfdfdf; colocando uma borda na imagem
+}
+*/
+
+img.imagem-principal {
+	width: 98%; /*colocando uma largura na imagem diferente*/
+	border: 2px solid #dfdfdf; /*colocando uma borda diferente na imagem*/
+}
+
+/*Formantando cabeçalhos*/
+
+h3 {
+	text-transform: uppercase; /*colocando a fonte em maísculo*/
+	display: inline; /*Formantando cabeçalhos*/
+	font-size: 0.8em; /*tamanho da fonte*/
+	padding: 3px; /*espacamento do texto*/
+}
+
+/*Formantando h3 coluna primária*/
+.destaque h3 {
+	background: #b10333;
+	color: #fff;
+}
+
+/*Formantando h3 coluna secundária*/
+
+.entrevista h3 {
+	background: #de003e;
+}
+
+/*Formatando lista de notícias*/
+
+/*IREMOS começar a formatar a partir de li POIS, a ul já fizemos a formatação padrão acima*/
+
+#lista-noticias li {
+	padding: 2px; /*padding 2px geral*/
+	border: 1px solid #ccc; /*colocar borda e definindo cor*/
+	height: 62px; /*largura da caixa*/
+}
+
+/*Formatando a imagem dentro da lista de notícias*/
+
+#lista-noticias li a img {
+	float: left; /*para coluna flutuar à esquerda*/
+	margin: 5px; /*colocar espaçamento entre as imagens*/
+}
+
+
+/*Formatando os links dentro da lista de notícias*/
+
+#lista-noticias li a {
+	text-decoration: none; /*remove o underline dos links*/
+}
+
+/*Formatando h3 dentro da lista de notícias*/
+
+#lista-noticias li a h3 {
+	font-size: 0.8em; /*tamanho da fonte*/
+	padding: 0; /*retirando padding do h3*/
+	color: #3e7ab9; /*definindo cor para h3*/
+}
+
+/*Formatando paragráfo dentro da lista de notícias*/
+#lista-noticias li a p {
+	font-size: 0.7em; /*tamanho da fonte*/
+	color: #000;
+}
+
+/*Definindo efeito hover na lista de notícias*/
+
+#lista-noticias li:hover {
+	background: #eee; /*tamanho da fonte*/
+	cursor: pointer; /*quando colocar mouse sobre vira uma mãozinha*/
+}
+
+
+
+
+
+/*Rodapé*/
+
+#container-rodape {
+	background: #294c71; /*cor de fundo rodapé*/
+	padding: 20px; /*espaçamento nome dentro rodapé*/
+	
+}
+
+#rodape {
+	width: 750px; /*largura do rodape*/
+	margin: 0 auto; /* coloca texto no início container de 750px*/
+	color: #fff; /*cor da fonte do texto rodapé*/
+	text-align: center; /*texto rodapé centralizado*/
+}
